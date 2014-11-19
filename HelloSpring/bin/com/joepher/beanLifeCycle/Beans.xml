@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="lifeCycle_1" class="com.joepher.beanLifeCycle.HelloWorld">
+		<property name="message" value="Hello LifeCycle_1."></property>
+	</bean>
+
+	<bean id="lifeCycle_2" class="com.joepher.beanLifeCycle.HelloWorld">
+		<property name="message" value="Hello LifeCycle_2."></property>
+	</bean>
+
+</beans>

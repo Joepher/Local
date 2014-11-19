@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="parent" class="com.joepher.beanDefineInheritance.HelloParent">
+		<property name="message1" value="Hello message1 of parent."></property>
+		<property name="message2" value="Hello message2 of parent."></property>
+	</bean>
+
+	<bean id="child" class="com.joepher.beanDefineInheritance.HelloChild"
+		parent="parent">
+		<property name="message1" value="Hello message1 of child."></property>
+		<property name="message3" value="Hello message2 of child."></property>
+	</bean>
+
+	<!-- 创建一个被其他子bean定义的bean定义模板 -->
+	<bean id="beanTemplate" abstract="true">
+		<property name="message1" value="Hello Message1."></property>
+		<property name="message2" value="Hello Message2."></property>
+		<property name="message3" value="Hello Message3."></property>
+	</bean>
+
+	<bean id="bean" class="com.joepher.beanDefineInheritance.HelloChild"
+		parent="beanTemplate">
+		<property name="message1" value="Hello message1 of bean."></property>
+		<property name="message3" value="Hello message2 of bean."></property>
+	</bean>
+
+</beans>

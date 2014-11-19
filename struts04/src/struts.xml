@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="advance" extends="struts-default" namespace="/day04">
+		<interceptors>
+			<interceptor name="some"
+				class="com.tarena.outman.interceptor.SomeInterceptor" />
+		</interceptors>
+
+		<action name="uitag" class="com.tarena.outman.day04.UITagAction"
+			method="form">
+			<interceptor-ref name="some" />
+			<result name="success">/WEB-INF/jsp/day04/uitag.jsp</result>
+		</action>
+
+		<action name="submit" class="com.tarena.outman.day04.UITagAction"
+			method="submit">
+			<result name="success">/index2.jsp</result>
+		</action>
+
+		<action name="uploadform">
+			<interceptor-ref name="basicStack" />
+			<result name="success">/WEB-INF/jsp/day04/uploadform.jsp</result>
+		</action>
+
+		<action name="upload" class="com.tarena.outman.day04.UploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">102400</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="success">/WEB-INF/jsp/day04/uploadimage.jsp</result>
+		</action>
+	</package>
+
+	<package name="core" extends="struts-default" namespace="/day03">
+		<action name="submit">
+			<result name="success">/index1.jsp</result>
+		</action>
+	</package>
+</struts>    
