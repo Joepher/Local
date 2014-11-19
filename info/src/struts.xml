@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="" namespace="/" extends="struts-default">
+
+		<action name="upload">
+			<result>/WEB-INF/jsp/upload.jsp</result>
+		</action>
+
+		<action name="download">
+			<result>/WEB-INF/jsp/download.jsp</result>
+		</action>
+	</package>
+
+</struts>    
